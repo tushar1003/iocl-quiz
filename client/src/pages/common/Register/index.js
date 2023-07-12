@@ -17,6 +17,8 @@ function Register() {
       if (response.success) {
         message.success(response.message);
         navigate("/login");
+        // localStorage.setItem("token", response.data);
+        // window.location.href = "/";
       } else {
         message.error(response.message);
       }
@@ -31,18 +33,21 @@ function Register() {
       <div className="card w-400 p-3 bg-white">
         <div className="flex flex-col">
           <h1 className="text-2xl">
-            SHEYQUIZ - REGISTER<i class="ri-user-add-line"></i>
+          सुरक्षा ब्रीफिंग फिल्म पर आगंतुक के लिए प्रश्नावली<i class="ri-user-add-line"></i>
           </h1>
           <div className="divider"></div>
           <Form layout="vertical" className="mt-2" onFinish={onFinish}>
-            <Form.Item name="name" label="Name">
+          <Form.Item name="name" label="आगंतुक का नाम">
               <input type="text" />
             </Form.Item>
-            <Form.Item name="email" label="Email">
+            <Form.Item name="placeName" label="स्थान का नाम">
               <input type="text" />
             </Form.Item>
-            <Form.Item name="password" label="Password">
-              <input type="password" />
+            <Form.Item name="date" label="तारीख़">
+              <input type="date" />
+            </Form.Item>
+            <Form.Item name="email" label="आगंतुक पास संख्या">
+              <input type="text" />
             </Form.Item>
 
             <div className="flex flex-col gap-2">
@@ -50,9 +55,9 @@ function Register() {
                 type="submit"
                 className="primary-contained-btn mt-2 w-100"
               >
-                Register
+                प्रश्नोत्तरी शुरू करें
               </button>
-              <Link to="/login">Already a member? Login</Link>
+              <Link to="/login">क्या पहले से ही सदस्य हैं? लॉग इन करें</Link>
             </div>
           </Form>
         </div>

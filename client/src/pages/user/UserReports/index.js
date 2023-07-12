@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PageTitle from "../../../components/PageTitle";
 import { message, Modal, Table } from "antd";
 import { useDispatch } from "react-redux";
@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import moment from "moment";
 
 function UserReports() {
+  
   const [reportsData, setReportsData] = React.useState([]);
   const dispatch = useDispatch();
   const columns = [
@@ -43,6 +44,7 @@ function UserReports() {
       dataIndex: "verdict",
       render: (text, record) => <>{record.result.verdict}</>,
     },
+    
   ];
 
   const getData = async () => {

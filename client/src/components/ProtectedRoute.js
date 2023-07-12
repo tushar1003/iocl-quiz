@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { SetUser } from "../redux/usersSlice.js";
 import { useNavigate } from "react-router-dom";
 import { HideLoading, ShowLoading } from "../redux/loaderSlice";
+import img from "./iocl-image.png";
+import img1 from "./iocl-image1.jpg";
 
 function ProtectedRoute({ children }) {
   const { user } = useSelector((state) => state.users);
@@ -166,14 +168,18 @@ function ProtectedRoute({ children }) {
                 onClick={() => setCollapsed(false)}
               ></i>
             )}
-            <h1 className="text-2xl text-white">SHEY QUIZ</h1>
+            
+            <h1 className="text-2xl text-white"><img src={img1} style={{height:"50px"}} />INDANE BOTTLING PLANT,KANPUR<img src={img} style={{height:"50px"}} /></h1>
             <div>
+              
               <div className="flex gap-1 items-center">
+                <i className="ri-user-line"></i>
                 <h1 className="text-md text-white">{user?.name}</h1>
               </div>
               <span>Role : {user?.isAdmin ? "Admin" : "User"}</span>
             </div>
           </div>
+          
           <div className="content">{children}</div>
         </div>
       </div>

@@ -5,14 +5,19 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    placeName: {
+      type: String,
+      required: true,
+      unique: false,
+    },
+    date: {
+      type: String,
+      required: true,
+    },
     email: {
       type: String,
       required: true,
       unique: true,
-    },
-    password: {
-      type: String,
-      required: true,
     },
     isAdmin: {
       type: Boolean,

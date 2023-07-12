@@ -5,18 +5,19 @@ import { getAllExams } from "../../../apicalls/exams";
 import { HideLoading, ShowLoading } from "../../../redux/loaderSlice";
 import PageTitle from "../../../components/PageTitle";
 import { useNavigate } from "react-router-dom";
+import ReactPlayer from "react-player";
 function Home() {
   const [exams, setExams] = React.useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.users);
+  const { user } = useSelector((state) => state.users); 
   const getExams = async () => {
     try {
       dispatch(ShowLoading());
       const response = await getAllExams();
       if (response.success) {
         setExams(response.data);
-      } else {
+      } else { 
         message.error(response.message);
       }
       dispatch(HideLoading());
@@ -33,7 +34,7 @@ function Home() {
   return (
     user && (
       <div>
-        <PageTitle title={`Hi ${user.name}, Welcome to SheyQuiz`} />
+        <PageTitle title={`नमस्ते ${user.name}, आईओसीएल में आपका स्वागत है` } />
         <div className="divider"></div>
         <Row gutter={[16, 16]}>
           {exams.map((exam) => (
@@ -56,6 +57,7 @@ function Home() {
               </div>
             </Col>
           ))}
+          <ReactPlayer url="https://www.youtube.com/watch?v=SZdTOriMlvc" controls={true} />
         </Row>
       </div>
     )

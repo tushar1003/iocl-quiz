@@ -14,6 +14,12 @@ const reportSchema = new mongoose.Schema(
       type: Object,
       required: true,
     },
+    image:{
+      type:Object,
+    },
+    signature:{
+      type: Object,
+    }
   },
   {
     timestamps: true,

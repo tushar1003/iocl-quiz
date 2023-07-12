@@ -30,15 +30,15 @@ function Login() {
       <div className="card w-400 p-3 bg-white">
         <div className="flex flex-col">
           <div className="flex">
-            <h1 className="text-2xl">SHEYQUIZ - LOGIN <i class="ri-login-circle-line"></i></h1>
+            <h1 className="text-2xl">सुरक्षा ब्रीफिंग फिल्म पर आगंतुक के लिए प्रश्नावली <i class="ri-login-circle-line"></i></h1>
             
           </div>
           <div className="divider"></div>
           <Form layout="vertical" className="mt-2" onFinish={onFinish}>
-            <Form.Item name="email" label="Email">
+            <Form.Item name="email" label="आगंतुक पास संख्या">
               <input type="text" />
             </Form.Item>
-            <Form.Item name="password" label="Password">
+            <Form.Item name="password" label="पासवर्ड (वर्तमान में पास नं.)">
               <input type="password" />
             </Form.Item>
 
@@ -50,7 +50,7 @@ function Login() {
                 Login
               </button>
               <Link to="/register" className="underline">
-                Not a member? Register
+                सदस्य नहीं हैं? पंजीकरण करवाना
               </Link>
             </div>
           </Form>
